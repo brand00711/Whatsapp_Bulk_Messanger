@@ -16,6 +16,8 @@ enter_path = os.path.join(base_path,"enter_button.png")
 usehere_path = os.path.join(base_path,"usehere_button.png")
 page_path = os.path.join(base_path,"page.png")
 invalid_path = os.path.join(base_path,"invalid.png")
+attachment_pin_path = os.path.join(base_path,"attachment_pin.PNG")
+media_path = os.path.join(base_path,"media.PNG")
 
 
 
@@ -25,7 +27,7 @@ invalid_path = os.path.join(base_path,"invalid.png")
 d1=1
 d2=3
 
-def func(n,m,x):
+def func(n,m,x,mediatext):
 
     loc_enter = None
     a=3.5
@@ -43,8 +45,29 @@ def func(n,m,x):
         loc_enter = pg.locateOnScreen(enter_path, grayscale=True, confidence=.8)
         loc_use = pg.locateOnScreen(usehere_path, grayscale=True, confidence=.8)
         loc_page = pg.locateOnScreen(page_path, grayscale=True, confidence=.8)
+        attachment_pin = pg.locateOnScreen(attachment_pin_path, grayscale=True, confidence=.8)
         # print("loc_enter = ",loc_enter)
-        if loc_enter is not None or loc_page is not None:
+        if attachment_pin is not None and mediatext is not None:
+            print("pin found")
+            pg.click(attachment_pin_path)
+            time.sleep(b)
+            media = pg.locateOnScreen(media_path, grayscale=True, confidence=.8)
+            if media is not None:
+                print("media found")
+                pg.click(media_path)
+                if len(mediatext) > 0:
+                    print("text is "+mediatext)
+                    time.sleep(a)
+                    for text in mediatext:
+                        pg.typewrite(text)
+                pg.press("enter")
+                pg.press("enter")
+                time.sleep(a)
+                pg.press("enter")
+                pg.press("enter")
+            time.sleep(b)
+            return True
+        elif loc_enter is not None or loc_page is not None:
             if x==0:
                 pg.press("enter")
                 pg.press("enter")
@@ -118,7 +141,7 @@ def nine_ag_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("9AG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -202,7 +225,7 @@ def nine_bg_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("9BG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -285,7 +308,7 @@ def nine_abg_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("9ABG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -374,7 +397,7 @@ def ten_ag_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10AG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -455,7 +478,7 @@ def ten_bg_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10BG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -536,7 +559,7 @@ def ten_abg_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10ABG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -625,7 +648,7 @@ def eleven_ag_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11AG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -705,7 +728,7 @@ def eleven_bg_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11BG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -786,7 +809,7 @@ def eleven_abg_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11ABG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -873,7 +896,7 @@ def twelve_ag_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12AG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -954,7 +977,7 @@ def twelve_bg_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12BG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -1034,7 +1057,7 @@ def twelve_abg_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12ABG.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -1113,7 +1136,7 @@ def gen_all_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("generalmsgs.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -1202,7 +1225,7 @@ def custom_all_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("custommsgs.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -1295,13 +1318,13 @@ def nine_ac_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.29.86":
 
-            dataset = pd.read_excel("9AC.xlsx")                                                                                                                                      
+            dataset = pd.read_excel("9AC.xlsx")
             names_list = dataset.iloc[:,0].values
             numbers_list = dataset.iloc[:,1].values
-
             message_list = dataset.iloc[:,2].values
+            media = dataset.iloc[:,3].values
             message = message_list[0]
             message=str(message)
             # # print(message)
@@ -1318,17 +1341,17 @@ def nine_ac_send():
 
                 if(i%30==0):
                     
-                    os.system("taskkill /im chrome.exe /f")
+                    # os.system("taskkill /im chrome.exe /f")
                     
                     if len(number)==12:
 
-                        func(number,message,i)
+                        func(number,message,i,media)
 
                     if len(number)==10:
                         number = 910000000000+int(number)
                         number = str(number)
                         
-                        func(number,message,i)
+                        func(number,message,i,media)
 
                     if len(number)==11:
 
@@ -1336,19 +1359,19 @@ def nine_ac_send():
                         number = number[1:]
                         number = 910000000000+int(number)
                                     
-                        func(number,message,i)
+                        func(number,message,i,media)
 
                 else:
                     if len(number)==12:
                 
-                        func(number,message,i)
+                        func(number,message,i,media)
 
                     if len(number)==10:
 
                         number = 910000000000+int(number)
                         number = str(number)
                         
-                        func(number,message,i)
+                        func(number,message,i,media)
 
                     if len(number)==11:
 
@@ -1356,10 +1379,10 @@ def nine_ac_send():
                         number = number[1:]
                         number = 910000000000+int(number)
                         
-                        func(number,message,i)
+                        func(number,message,i,media)
                         
 
-            os.system("taskkill /im chrome.exe /f")
+            # os.system("taskkill /im chrome.exe /f")
 
         else: 
             return render_template('user_error.html', title='Error!')
@@ -1383,7 +1406,7 @@ def nine_bc_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("9BC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -1471,7 +1494,7 @@ def nine_abc_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("9ABC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -1567,7 +1590,7 @@ def ten_ac_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10AC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -1655,7 +1678,7 @@ def ten_bc_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10BC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -1741,7 +1764,7 @@ def ten_abc_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10ABC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -1833,7 +1856,7 @@ def eleven_ac_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11AC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -1918,7 +1941,7 @@ def eleven_bc_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11BC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -2005,7 +2028,7 @@ def eleven_abc_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11ABC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -2097,7 +2120,7 @@ def twelve_ac_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12AC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -2182,7 +2205,7 @@ def twelve_bc_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12BC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -2268,7 +2291,7 @@ def twelve_abc_send():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12ABC.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -2356,7 +2379,7 @@ def general_msg():
     # pg.FAILSAFE = False
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("generalmsgs.xlsx")
             names_list = dataset.iloc[:,0].values
@@ -2550,7 +2573,7 @@ def nine_a_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("9Am.xlsx")
 
@@ -2762,7 +2785,7 @@ def nine_b_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("9Bm.xlsx")
 
@@ -2907,7 +2930,7 @@ def nine_ab_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("9ABm.xlsx")
 
@@ -3052,7 +3075,7 @@ def ten_a_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10Am.xlsx")
 
@@ -3197,7 +3220,7 @@ def ten_b_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10Bm.xlsx")
 
@@ -3342,7 +3365,7 @@ def ten_ab_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10ABm.xlsx")
 
@@ -3487,7 +3510,7 @@ def eleven_a_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11Am.xlsx")
 
@@ -3631,7 +3654,7 @@ def eleven_b_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11Bm.xlsx")
 
@@ -3776,7 +3799,7 @@ def eleven_ab_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11ABm.xlsx")
 
@@ -3921,7 +3944,7 @@ def twelve_a_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12Am.xlsx")
 
@@ -4066,7 +4089,7 @@ def twelve_b_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12Bm.xlsx")
 
@@ -4211,7 +4234,7 @@ def twelve_ab_marks():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12ABm.xlsx")
 
@@ -4355,7 +4378,7 @@ def marks_all_send():
     '''FAIL SAFE IS OPTIONAL(RECOMMENDED)'''
     # pg.FAILSAFE = False
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("9Am.xlsx")
 
@@ -4491,7 +4514,7 @@ def marks_all_send():
         return render_template('time_exceed.html', title='Error!')
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("9Bm.xlsx")
 
@@ -4627,7 +4650,7 @@ def marks_all_send():
         return render_template('time_exceed.html', title='Error!')
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10Am.xlsx")
 
@@ -4763,7 +4786,7 @@ def marks_all_send():
         return render_template('time_exceed.html', title='Error!')
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("10Bm.xlsx")
 
@@ -4899,7 +4922,7 @@ def marks_all_send():
         return render_template('time_exceed.html', title='Error!')
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11Am.xlsx")
 
@@ -5035,7 +5058,7 @@ def marks_all_send():
         return render_template('time_exceed.html', title='Error!')
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("11Bm.xlsx")
 
@@ -5171,7 +5194,7 @@ def marks_all_send():
         return render_template('time_exceed.html', title='Error!')
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12Am.xlsx")
 
@@ -5307,7 +5330,7 @@ def marks_all_send():
         return render_template('time_exceed.html', title='Error!')
 
     if d1<d2:
-        if IPAddr == "192.168.29.7":
+        if IPAddr == "192.168.43.41":
 
             dataset = pd.read_excel("12Bm.xlsx")
 
