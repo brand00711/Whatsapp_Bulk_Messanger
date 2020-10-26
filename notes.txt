@@ -1,0 +1,2 @@
+Add titles to all the html pages
+complete "gen_all.html"

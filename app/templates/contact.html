@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Contact Us</title>
+  <style>*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.contact-parent{
+    display:flex;
+    margin:80px 0;
+}
+
+.contact-child{
+    display:flex;
+    flex:1;
+    box-shadow:0px 0px 10px -2px rgba(0,0,0,0.75);
+}
+
+.child1{
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://cdn.pixabay.com/photo/2019/06/28/00/17/architecture-4303279_1280.jpg");
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    color:#fff;
+    padding:100px 0;
+}
+
+.child1 p{
+    padding-left:20%;
+    font-size:20px;
+    text-shadow:0px 0px 2px #000;
+}
+
+.child1 p span{
+    font-size:16px;
+    color:#9df2fd;
+}
+
+.child2{
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.inside-contact{
+    width:90%;
+    margin:0 auto;
+}
+
+.inside-contact h2{
+    text-transform:uppercase;
+    text-align:center;
+    margin-top:50px;
+}
+
+.inside-contact h3{
+    text-align:center;
+    font-size:16px;
+    color:#0085e2;
+}
+
+.inside-contact input, .inside-contact textarea{
+    width:100%;
+    background-color:#eee;
+    border:1px solid rgba(0,0,0,0.48);
+    padding:5px 10px;
+    margin-bottom:20px;
+}
+
+.inside-contact input[type=submit]{
+    background-color:#000;
+    color:#fff;
+    transition:0.2s;
+    border:2px solid #000;
+    margin:30px 0;
+}
+
+.inside-contact input[type=submit]:hover{
+    background-color:#fff;
+    color:#000;
+    transition:0.2s;
+}
+
+@media screen and (max-width:991px){
+    .contact-parent{
+        display:block;
+        width:100%;
+    }
+
+    .child1{
+        display:none;
+    }
+
+    .child2{
+        background-image:linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url("https://cdn.pixabay.com/photo/2019/06/28/00/17/architecture-4303279_1280.jpg");
+        background-size:cover;
+    }
+
+    .inside-contact input, .inside-contact textarea{
+        background-color:#fff;
+    }
+
+}
+.topnav {
+    background-color: #080100;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    padding-right:-20px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .topnav a.active {
+    background-color: #ddd;
+    color: black;
+  }
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+    <title>Contact Us</title>
+<head>
+    <head>
+  </head>
+  <body>
+  <div class="all" >
+  <div class="topnav">
+    
+    <a  class="active"  href="/contact">Contact Us</a>
+    <a href="/Marksheet">Marks</a>    
+    <a  href="/custom">Custom</a>
+    <a href="/general">General</a>
+      <a href="/home">Home</a>
+
+      
+    <meta charset="utf-8" />
+   <title>Contact Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>   
+    <link href="Style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div>
+            <div class="container">
+                <div class="contact-parent">
+                    <div class="contact-child child1">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> Address <br />
+                            <span> Hyderabad
+                                <br />
+                                Telangana.
+                            </span>
+                        </p>
+
+                        <p>
+                            <i class="fas fa-phone-alt"></i> Brandon <br />
+                         <span> +917993061667 </span>
+                            
+                        </p>
+                        <p>
+                            <i class="fas fa-phone-alt"></i> Joshua <br />
+                         <span> +919704701947 </span>
+                            
+                        </p>
+                       
+
+
+                        <p>
+                            <i class=" far fa-envelope"></i> General Support <br />
+                            <span>brandondasari5@gmail.com
+                        </p>
+                         <p>
+                            <i class=" far fa-envelope"></i> General Support <br />
+                            <span>ms14btech11005@iith.ac.in </span>
+                        </p>
+
+                    </div>
+
+                    <div class="contact-child child2">
+                        <div class="inside-contact">
+                            <h2>Contact Us</h2>
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdtm78EuPPNHa3GZXM24ksEEDQrvJgOKB6AGjZWzDpSiEZ6zw/viewform?embedded=true" width="640" height="1098" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>

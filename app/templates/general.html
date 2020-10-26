@@ -1,0 +1,225 @@
+<style>.topnav {
+  background-color: #080100;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  padding-right:-20px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a.active {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+
+ 
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+.pulse:hover,
+.pulse:focus {
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+.close:hover,
+.close:focus {
+  box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  -webkit-transform: translateY(-0.25em);
+          transform: translateY(-0.25em);
+}
+
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+}
+
+.offset {
+  box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+}
+.offset:hover, .offset:focus {
+  box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+
+.fill {
+  --color: #a972cb;
+  --hover: #cb72aa;
+}
+.all{
+width:100%;
+margin:0;
+padding:0;
+}
+body{
+margin:0;
+padding:0;
+}
+.pulse {
+  --color: #ef6eae;
+  --hover: #ef8f6e;
+}
+
+.close {
+  --color: #ff7f82;
+  --hover: #ffdc7f;
+}
+
+.raise {
+  --color: #ffa260;
+  --hover: #e5ff60;
+}
+
+.up {
+  --color: #e4cb58;
+  --hover: #94e458;
+}
+
+.slide {
+  --color: #8fc866;
+  --hover: #66c887;
+}
+
+.offset {
+  --color: #19bc8b;
+  --hover: #1973bc;
+}
+
+button {
+  color: var(--color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+.body1 {
+  color: #fff;
+  background: #04122D;
+  font: 300 1em 'Fira Sans', sans-serif;
+  -webkit-box-pack: center;
+          justify-content: center;
+  align-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+code {
+  color: #e4cb58;
+  font: inherit;
+}
+
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+</style>
+<title>General Messages</title>
+<head>
+</head>
+<body>
+<div class="all" >
+<div class="topnav">
+  <a href="/contact">Contact Us</a>
+  <a href="/Marksheet">Marks</a>
+    <a  href="/custom">Custom</a>
+    <a class="active"  href="/general">General</a>
+
+
+    <a href="/home">Home</a>
+
+  
+</div>
+
+</div>
+
+<!-- partial:index.partial.html -->
+
+
+<div class="body1" >
+
+<div  class="buttons">
+<h1>General Messages</h1>
+  <h2>Classes</h2>
+  
+  <a href="/9g">
+ <button class="up">9</button>
+ </a>
+ <a href="/10g"> 
+ <button class="up">10</button>
+</a>
+ <a href="/11g">
+ <button class="up">11</button>
+ </a>
+ <a href="/12g"> 
+ <button class="up">12</button>
+</a>
+<p>
+
+  <a href="/gen_all"> 
+  <button class="focus">Send To All</button>
+  </a>
+
+  </p>
+  <h3>Please Make Sure You Have High Speed Internet.</h3>
+  <p>In Order To Send Messages.</p>
+</a>
+ <a href="/home"> 
+ <button class="up">< Back</button>
+</a>
+  </div>
