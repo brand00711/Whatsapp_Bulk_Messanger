@@ -1,6 +1,5 @@
 # Whatsapp_Bulk_Messanger
 
-Of course! If you have the project on GitHub and want to present it without slides, you can use the following script as a guide:
 
 **Introduction:**
 - I am excited to present my WhatsApp bulk messaging project, which I've developed using Python, NumPy, Pandas, and Flask.
